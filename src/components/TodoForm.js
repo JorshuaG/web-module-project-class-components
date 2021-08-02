@@ -13,6 +13,10 @@ class TodoForm extends Component {
     evt.preventDefault();
     this.props.handleAddTask(this.state.inputValue);
   };
+  handleClearClick = (evt) => {
+    evt.preventDefault();
+    this.props.handleClear();
+  };
 
   render() {
     return (
@@ -20,7 +24,7 @@ class TodoForm extends Component {
         <form>
           <input type="text" onChange={this.handleChange}></input>
           <button onClick={this.handleClick}>Add ToDo</button>
-          <button>Clear Completed</button>
+          <button onClick={this.handleClearClick}>Clear Completed</button>
         </form>
       </div>
     );
